@@ -67,6 +67,9 @@ cat src/browser/manifest.json | \
 # replace all instances of src/ with empty string
 echo "Generated ${extension}manifest.json ✓"
 
+title "Step 7: Copy assets"
+cp -v -R src/browser/assets "${extension}/assets"
+
 
 # COMPILE NATIVE
 title "COMPILE NATIVE"

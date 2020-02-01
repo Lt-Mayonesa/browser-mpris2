@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Browser MPRIS2 debug",
   "description": "Implements the MPRIS2 interface for Chrome and Firefox",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "icons": {
     "16": "assets/browser-mpris2-16.png",
     "48": "assets/browser-mpris2-48.png",
@@ -11,7 +11,7 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "browser-mpris2@lt-mayonesa.github.io",
-      "strict_min_version": "42.0"
+      "strict_min_version": "57.0"
     }
   },
   "browser_action": {
