@@ -96,11 +96,22 @@
     },
     {
       "matches": [
+        "*://listen.tidal.com/*"
+      ],
+      "js": [
+        "providers/tidal.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    },
+    {
+      "matches": [
         "*://*/*"
       ],
       "exclude_matches": [
         "*://www.google.com/recaptcha/*",
-        "*://google.com/recaptcha/*"
+        "*://google.com/recaptcha/*",
+        "*://mail.goole.com/*"
       ],
       "js": [
         "init.js"
