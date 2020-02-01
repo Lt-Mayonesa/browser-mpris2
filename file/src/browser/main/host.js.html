@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/browser/main/host.js | browser-mpris2</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Implements the MPRIS2 interface for Chrome and Firefox"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="browser-mpris2"><meta property="twitter:description" content="Implements the MPRIS2 interface for Chrome and Firefox"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/Lt-Mayonesa/browser-mpris2"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser">browser</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-carrier">carrier</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-host">host</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-page">page</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-playback">playback</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-background">browser/background</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-raiseTab">raiseTab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeTab">removeTab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-connections">connections</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-host">host</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pages">pages</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-main">browser/main</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/carrier.js~Carrier.html">Carrier</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/host.js~Host.html">Host</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/page.js~Page.html">Page</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/playback.js~Playback.html">Playback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/player.js~Player.html">Player</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LoopStatus">LoopStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MessageMethod">MessageMethod</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MessageProperty">MessageProperty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MessageType">MessageType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PlaybackStatus">PlaybackStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Metadata">Metadata</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Payload">Payload</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-popup">browser/popup</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/popup/version.js~Version.html">Version</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-manifestData">manifestData</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-providers">browser/providers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/netflix.js~NetflixPage.html">NetflixPage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/netflix.js~NetflixPlayback.html">NetflixPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/netflix.js~NetflixPlayer.html">NetflixPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/soundcloud.js~SoundCloudPlayback.html">SoundCloudPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/soundcloud.js~SoundCloudPlayer.html">SoundCloudPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/spotify.js~SpotifyPlayback.html">SpotifyPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/spotify.js~SpotifyPlayer.html">SpotifyPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/tidal.js~TidalPlayback.html">TidalPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/tidal.js~TidalPlayer.html">TidalPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube-music.js~YouTubeMusicPlayback.html">YouTubeMusicPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube-music.js~YouTubeMusicPlayer.html">YouTubeMusicPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube.js~YouTubePage.html">YouTubePage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube.js~YouTubePlayback.html">YouTubePlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube.js~YouTubePlayer.html">YouTubePlayer</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/browser/main/host.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ *
+ * A class in charge of communicating back and forth with the native app.
+ *
+ * There should be no need to modify/extend this class
+ * as it uses {@link Playback} to build the messages to send
+ * and as the receiver of all messages from the MPRIS2 interfase
+ *
+ */
+class Host {
+    /**
+     *
+     * @param {Playback} playback - the playback of the current site
+     * @param {Carrier} carrier
+     * @param {Object} port - see {@link https://developer.chrome.com/apps/runtime#type-Port}
+     */
+    constructor (playback, carrier, port) {
+        /**
+         * The playback to interact with
+         * @type {Playback}
+         */
+        this.playback = playback;
+        /**
+         * A carrier for caching and building the payloads
+         * @type {Carrier}
+         */
+        this.carrier = carrier;
+        /**
+         * A chrome.runtime.Port
+         * @see https://developer.chrome.com/apps/runtime#type-Port
+         * @type {Object}
+         */
+        this.port = port;
+
+        /**
+         * The default Payload.Identity for the MPRIS2 Interface
+         * @type {string}
+         */
+        this.source = &apos;browser&apos;;
+
+        this.port.onMessage.addListener((r, s, sr) =&gt; this.messageListener(r));
+    }
+
+    /**
+     * Send a message to host app
+     *
+     * @param {MessageType} type
+     * @param {Object|number} [payload]
+     */
+    sendMessage (type, payload) {
+        this.port.postMessage({
+            source: this.source,
+            type: type,
+            args: [payload]
+        });
+    }
+
+    /**
+     * Send a change message to host app
+     */
+    change () {
+        if (this.playback.activePlayer) {
+            let payload = this.carrier.requestPayload(this.playback);
+            if (Object.keys(payload || {}).length)
+                this.sendMessage(
+                  MessageType.CHANGE,
+                  payload
+                );
+        }
+    }
+
+    /**
+     * Set player as active player and send data to native app
+     *
+     * @param {Player} player
+     */
+    start (player) {
+        this.playback.setActivePlayer(player);
+        this.change();
+    }
+
+    /**
+     *
+     * @param {MessageMethod} method
+     * @param {*} args
+     */
+    return (method, args) {
+        this.port.postMessage({
+            source: this.source,
+            type: MessageType.RETURN,
+            method, args
+        });
+    }
+
+    /**
+     * Send a seeked message to host
+     *
+     * @param {Player} player
+     */
+    seeked (player) {
+        this.sendMessage(
+          MessageType.SEEK,
+          player.getPosition()
+        );
+    }
+
+    /**
+     * Send a quit message to host
+     */
+    quit () {
+        this.carrier.clear();
+        this.sendMessage(
+          MessageType.QUIT
+        );
+    }
+
+    /**
+     * Listener for messages from native application (aka: mpris interface)
+     *
+     * @param {Object} request
+     * @param {MessageMethod} request.method
+     * @param {Array}  request.args
+     */
+    messageListener (request) {
+        let result;
+        if (request.method === MessageMethod.GET) {
+            result = this.get(...request.args);
+        } else if (request.method === MessageMethod.SET) {
+            result = this.set(...request.args);
+        } else {
+            result = this.command(request.method, ...request.args);
+        }
+        this.return(request.method, result);
+    }
+
+    /**
+     * Native application wants to Get a property from client
+     *
+     * @param {string} _ - org.mpris.MediaPlayer2.Player
+     * @param {MessageProperty} propName - property that should be returned
+     * @returns {number|void}
+     */
+    get (_, propName) {
+        if (propName === MessageProperty.POSITION) {
+            return this.playback.getPosition() || 0;
+        }
+    }
+
+    /**
+     * Native application wants to Set a property
+     * in the client.
+     *
+     * @param {string} _ - org.mpris.MediaPlayer2.Player
+     * @param {MessageProperty} propName - property to set
+     * @param {number|LoopStatus|boolean} [newValue] - depends on the property to set
+     */
+    set (_, propName, newValue) {
+        switch (propName) {
+            case MessageProperty.RATE:
+                this.playback.setRate(Number(newValue));
+                break;
+
+            case MessageProperty.VOLUME:
+                this.playback.setVolume(Number(newValue));
+                break;
+
+            case MessageProperty.SHUFFLE:
+                this.playback.setShuffle(Boolean(newValue));
+                break;
+
+            case MessageProperty.LOOP_STATUS:
+                this.playback.setLoopStatus(Object.values(LoopStatus).find(e =&gt; e === newValue));
+                break;
+
+            case MessageProperty.FULL_SCREEN:
+                this.playback.toggleFullScreen();
+                break;
+        }
+    }
+
+    /**
+     * Native application wants to run a command on playback
+     *
+     * @param {MessageMethod} name
+     */
+    command (name) {
+        switch (name) {
+            case MessageMethod.PLAY:
+                this.playback.play();
+                break;
+            case MessageMethod.PAUSE:
+                this.playback.pause();
+                break;
+            case MessageMethod.TOGGLE:
+                this.playback.togglePlayback();
+                break;
+            case MessageMethod.STOP:
+                this.playback.stop();
+                break;
+            case MessageMethod.NEXT:
+                this.playback.next();
+                break;
+            case MessageMethod.PREVIOUS:
+                this.playback.previous();
+                break;
+            case MessageMethod.SEEK:
+                this.playback.seek(arguments[1]);
+                break;
+            case MessageMethod.SET_POSITION: //why is this not in set?
+                this.playback.setPosition(arguments[1], arguments[2]);
+                break;
+        }
+    }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

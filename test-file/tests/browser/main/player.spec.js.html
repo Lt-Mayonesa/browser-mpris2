@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">tests/browser/main/player.spec.js | browser-mpris2</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Implements the MPRIS2 interface for Chrome and Firefox"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="browser-mpris2"><meta property="twitter:description" content="Implements the MPRIS2 interface for Chrome and Firefox"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/Lt-Mayonesa/browser-mpris2"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser">browser</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-carrier">carrier</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-host">host</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-page">page</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-playback">playback</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-background">browser/background</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-raiseTab">raiseTab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeTab">removeTab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-connections">connections</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-host">host</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pages">pages</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-main">browser/main</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/carrier.js~Carrier.html">Carrier</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/host.js~Host.html">Host</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/page.js~Page.html">Page</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/playback.js~Playback.html">Playback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/player.js~Player.html">Player</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LoopStatus">LoopStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MessageMethod">MessageMethod</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MessageProperty">MessageProperty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MessageType">MessageType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PlaybackStatus">PlaybackStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Metadata">Metadata</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Payload">Payload</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-popup">browser/popup</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/popup/version.js~Version.html">Version</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-manifestData">manifestData</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-providers">browser/providers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/netflix.js~NetflixPage.html">NetflixPage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/netflix.js~NetflixPlayback.html">NetflixPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/netflix.js~NetflixPlayer.html">NetflixPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/soundcloud.js~SoundCloudPlayback.html">SoundCloudPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/soundcloud.js~SoundCloudPlayer.html">SoundCloudPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/spotify.js~SpotifyPlayback.html">SpotifyPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/spotify.js~SpotifyPlayer.html">SpotifyPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/tidal.js~TidalPlayback.html">TidalPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/tidal.js~TidalPlayer.html">TidalPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube-music.js~YouTubeMusicPlayback.html">YouTubeMusicPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube-music.js~YouTubeMusicPlayer.html">YouTubeMusicPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube.js~YouTubePage.html">YouTubePage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube.js~YouTubePlayback.html">YouTubePlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube.js~YouTubePlayer.html">YouTubePlayer</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">tests/browser/main/player.spec.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @test {Player}
+ */
+describe(&apos;Player tests&apos;, () =&gt; {
+
+    let page;
+    let element;
+    /**
+     * @type {Player}
+     */
+    let player;
+
+    beforeEach(() =&gt; {
+        page = {};
+
+        element = mock(HTMLMediaElement);
+        element.baseURI = &apos;http://mock.com&apos;;
+
+        player = new Player(page, null, element);
+    });
+
+    /**
+     * @test {Player#getId}
+     */
+    describe(&apos;Player.getId&apos;, () =&gt; {
+        it(`given a media
+        when i get the id
+        it should return the elements URI`,
+          () =&gt; expect(player.getId()).toBe(&apos;http://mock.com&apos;)
+        );
+    });
+
+    /**
+     * @test {Player#isPlaying}
+     */
+    describe(&apos;Player.isPlaying&apos;, () =&gt; {
+        parameterized(
+          `given a media with paused = $paused
+             when i check if the player is playing
+             it should be $expected`,
+          [
+              { paused: true, expected: false },
+              { paused: false, expected: true }
+          ],
+          (params) =&gt; {
+              element.paused = params.paused;
+              expect(player.isPlaying())
+                .toBe(params.expected);
+          }
+        );
+    });
+
+    /**
+     * @test {Player#getLength}
+     */
+    describe(&apos;Player.getLength&apos;, () =&gt; {
+        parameterized(
+          `given a media with duration = $duration
+             when i get the player&apos;s length
+             it should be $expected`,
+          [
+              { duration: 100, expected: 100000000 },
+              { duration: 4687, expected: 4687000000 },
+              { duration: 0, expected: 0 }
+          ],
+          (params) =&gt; {
+              element.duration = params.duration;
+              expect(player.getLength())
+                .toBe(params.expected);
+          }
+        );
+    });
+
+    /**
+     * @test {Player#getVolume}
+     */
+    describe(&apos;Player.getVolume&apos;, () =&gt; {
+        parameterized(
+          `given a media with volume = $volume
+             with muted = $muted
+             when i get the player&apos;s volume 
+             it should be $expected`,
+          [
+              { volume: 1, muted: false, expected: 1 },
+              { volume: 0.4, muted: false, expected: 0.4 },
+              { volume: 1, muted: true, expected: 0 },
+              { volume: 0.4, muted: true, expected: 0 }
+          ],
+          (params) =&gt; {
+              element.volume = params.volume;
+              element.muted = params.muted;
+
+              expect(player.getVolume())
+                .toBe(params.expected);
+          }
+        );
+    });
+
+    /**
+     * @test {Player#setVolume}
+     */
+    describe(&apos;Player.setVolume&apos;, () =&gt; {
+        parameterized(
+          `given a player
+            when i set the players volume to $volume
+            then the media volume be $volume`,
+          [
+              { volume: 1 },
+              { volume: 0 },
+              { volume: 0.4 },
+              { volume: .76 },
+          ],
+          (params) =&gt; {
+              player.setVolume(params.volume);
+
+              expect(element.volume)
+                .toBe(params.volume);
+          }
+        );
+    });
+
+    /**
+     * @test {Player#setRate}
+     */
+    describe(&apos;Player.setRate&apos;, () =&gt; {
+        parameterized(
+          `given a player
+            when i set the rate to $rate
+            then the playbackRate should be $rate`,
+          [
+              { rate: 1 },
+              { rate: 0 },
+              { rate: 0.4 },
+              { rate: .76 }
+          ],
+          (params) =&gt; {
+              player.setRate(params.rate);
+
+              expect(element.playbackRate)
+                .toBe(params.rate);
+          }
+        );
+    });
+
+    /**
+     * @test {Player#getRate}
+     */
+    describe(&apos;Player.getRate&apos;, () =&gt; {
+        parameterized(
+          `given a media with playbackRate $rate
+          when i get the the player&apos;s rate
+          it should be $rate`,
+          [
+              { rate: 1 },
+              { rate: 2.0 },
+              { rate: 0.2 }
+          ],
+          (params) =&gt; {
+              element.playbackRate = params.rate;
+
+              expect(player.getRate())
+                .toBe(params.rate);
+          }
+        );
+    });
+
+    /**
+     * Test player&apos;s title integration
+     *
+     * @test {Player#getTitle}
+     */
+    describe(&apos;Player.getTitle&apos;, () =&gt; {
+        parameterized(
+          `given a page with a title $title
+          when i get the players title
+          it should equal $title`,
+          [
+              { title: &apos;My Site | Guau&apos; },
+              { title: &apos;Youtube&apos; },
+              { title: &apos;/my/super/playlist&apos; }
+          ],
+          (params) =&gt; {
+              page.getTitle = function () {
+                  return params.title;
+              };
+              expect(player.getTitle())
+                .toBe(params.title);
+          }
+        );
+    });
+
+    /**
+     * The artists are parsed correctly from the url
+     *
+     * @test {Player#getArtists}
+     */
+    describe(&apos;Player.getArtists&apos;, () =&gt; {
+        parameterized(
+          `given a media with a valid url $url
+          when i get the artists
+          it should be $artists`,
+          [
+              { url: &apos;http://google.com&apos;, artists: [&apos;google.com&apos;] },
+              { url: &apos;https://youtube.com/watch?v=1231230912&apos;, artists: [&apos;youtube.com&apos;] },
+              { url: &apos;http://soundcloud.com.ar/my/super/playlist&apos;, artists: [&apos;soundcloud.com.ar&apos;] }
+          ],
+          (params) =&gt; {
+              element.baseURI = params.url;
+              player = new Player(page, null, element);
+
+              expect(player.getArtists())
+                .toEqual(params.artists);
+          }
+        );
+    });
+
+    /**
+     * Feature:
+     *
+     * @test {Player#getCover}
+     */
+    describe(&apos;Player.getCover&apos;, () =&gt; {
+        parameterized(
+          `given a media with a valid url $url
+          when i get the player&apos;s cover
+          it should be $cover`,
+          [
+              {
+                  url: &apos;http://google.com&apos;,
+                  cover: &apos;http://logo.clearbit.com/google.com&apos;
+              },
+              {
+                  url: &apos;https://youtube.com/watch?v=1231230912&apos;,
+                  cover: &apos;http://logo.clearbit.com/youtube.com&apos;
+              },
+              {
+                  url: &apos;http://soundcloud.com.ar/my/super/playlist&apos;,
+                  cover: &apos;http://logo.clearbit.com/soundcloud.com.ar&apos;
+              }
+          ],
+          (params) =&gt; {
+              element.baseURI = params.url;
+              player = new Player(page, null, element);
+
+              expect(player.getCover())
+                .toBe(params.cover);
+          }
+        );
+    });
+
+    describe(&apos;Player.getPosition&apos;, () =&gt; {
+        parameterized(
+          `given a media with currentTime $time
+          when i get the player&apos;s position
+          it should be $expected`,
+          [
+              { time: 50, expected: 50000000 },
+              { time: 4687, expected: 4687000000 },
+              { time: 0, expected: 0 }
+          ],
+          (params) =&gt; {
+              element.currentTime = params.time;
+
+              expect(player.getPosition())
+                .toBe(params.expected);
+          }
+        );
+    });
+
+    describe(&apos;Player.play&apos;, () =&gt; {
+        it(
+          `given a valid media that is paused
+          when i call play
+          it should start playing`,
+          () =&gt; {
+              element.play = function () {
+                  this.paused = false;
+                  return new Promise((resolve) =&gt; {
+                      resolve();
+                  });
+              };
+              element.paused = true;
+
+              return player.play()
+                .then(() =&gt; {
+                    expect(element.paused).toBe(false);
+                });
+          }
+        );
+    });
+
+    describe(&apos;Player.getUrl&apos;, () =&gt; {
+        parameterized(
+          `given a valid media with a url = $url
+          when i get the player&apos;s url
+          it should be $url`,
+          [
+              { url: &apos;http://google.com&apos; },
+              { url: &apos;http://youtube.com&apos; }
+          ],
+          (params) =&gt; {
+              element.baseURI = params.url;
+              player = new Player(page, null, element);
+
+              expect(player.getUrl())
+                .toEqual(params.url);
+          }
+        );
+    });
+
+    describe(&apos;Player.isLooping&apos;, () =&gt; {
+        parameterized(
+          `given a media with loop = $loop
+          when i check the player&apos;s looping state
+          it should be $loop`,
+          [
+              { loop: true },
+              { loop: false }
+          ],
+          (params) =&gt; {
+              element.loop = params.loop;
+
+              expect(player.isLooping()).toBe(params.loop);
+          }
+        );
+    });
+
+    describe(&apos;Player.setLoop&apos;, () =&gt; {
+        parameterized(
+          `given a player
+            when i set the players loop status to $loop
+            then the media loop status be $loop`,
+          [
+              { loop: true },
+              { loop: false }
+          ],
+          (params) =&gt; {
+              player.setLoop(params.loop);
+
+              expect(element.loop).toBe(params.loop);
+          }
+        );
+    });
+
+    describe(&apos;Player.pause&apos;, () =&gt; {
+        it(
+          `given a media that is not paused
+          when i pause the player
+          it should be paused`,
+          () =&gt; {
+              element.pause = function () {
+                  this.paused = true;
+              };
+              element.paused = false;
+
+              player.pause();
+
+              expect(element.paused).toBe(true);
+          });
+        it(
+          `given a media that is paused
+          when i pause the player
+          it should stay paused`,
+          () =&gt; {
+              element.pause = function () {
+                  this.paused = true;
+              };
+              element.paused = false;
+
+              player.pause();
+
+              expect(element.paused).toBe(true);
+          });
+    });
+
+    describe(&apos;Player.playPause&apos;, () =&gt; {
+        parameterized(
+          `given a media with paused = $paused
+          when i toggle the player
+          then playing should be $expected`,
+          [
+              { paused: true, expected: false },
+              { paused: false, expected: true }
+          ],
+          (params) =&gt; {
+              element.pause = function () {
+                  this.paused = true;
+              };
+              element.play = function () {
+                  this.paused = false;
+                  return new Promise((resolve) =&gt; {
+                      resolve();
+                  });
+              };
+              element.paused = params.paused;
+
+              player.playPause();
+
+              expect(element.paused).toBe(params.expected);
+          }
+        );
+    });
+
+    describe(&apos;Player.stop&apos;, () =&gt; {
+        parameterized(
+          `given a media with paused = $paused
+          when i stop the player
+          then paused should be $paused
+          and it&apos;s currentTime should be 0`,
+          [
+              { paused: true, expected: false },
+              { paused: false, expected: true }
+          ],
+          (params) =&gt; {
+              element.pause = function () {
+                  this.paused = true;
+              };
+              element.paused = params.paused;
+
+              player.stop();
+
+              expect(element.paused).toBe(true);
+              expect(element.currentTime).toBe(0);
+          });
+    });
+
+    describe(&apos;Player.seek&apos;, () =&gt; {
+        parameterized(
+          `given a media with currentTime = $time
+          when i seek by $offset seconds
+          then currentTime should be $expected`,
+          [
+              { time: 10, offset: 10, expected: 20 },
+              { time: 10, offset: -10, expected: 0 },
+              { time: 0, offset: 100, expected: 100 },
+              { time: 0, offset: -10, expected: -10 },
+          ],
+          (params) =&gt; {
+              element.currentTime = params.time;
+
+              player.seek(params.offset * 1e6);
+
+              expect(element.currentTime).toBe(params.expected);
+          }
+        );
+    });
+
+    describe(&apos;Player.setPosition&apos;, () =&gt; {
+        parameterized(
+          `given a media with currentTime = $time
+          when i set the position to be $position
+          then currentTime should be $expected`,
+          [
+              { time: 10, position: 10, expected: 10 },
+              { time: 10, position: 0, expected: 0 },
+              { time: 10, position: 100, expected: 100 },
+          ],
+          (params) =&gt; {
+              element.currentTime = params.time;
+
+              player.setPosition(params.position * 1e6);
+
+              expect(element.currentTime).toBe(params.expected);
+          }
+        );
+    });
+
+    describe(&apos;Player.getSiteDomain&apos;, () =&gt; {
+        parameterized(
+          `given a valid media with a url = $url
+          when i get the player&apos;s site domain
+          it should be $expected`,
+          [
+              { url: &apos;http://google.com&apos;, expected: &apos;google.com&apos; },
+              { url: &apos;http://www.youtube.com&apos;, expected: &apos;www.youtube.com&apos; }
+          ],
+          (params) =&gt; {
+              element.baseURI = params.url;
+              player = new Player(page, null, element);
+
+              expect(player.getSiteDomain())
+                .toEqual(params.expected);
+          }
+        );
+    });
+
+    describe(&apos;Player.isHidden&apos;, () =&gt; {
+        it(
+          `given a media with no offset parent
+          when i check if the player is hidden
+          then it should be true`,
+          () =&gt; {
+              element.offsetParent = null;
+
+              expect(player.isHidden()).toBe(true);
+          }
+        );
+
+        it(
+          `given a media with a offset parent
+          when i check if the player is hidden
+          then it should be false`,
+          () =&gt; {
+              element.offsetParent = {};
+
+              expect(player.isHidden()).toBe(false);
+          }
+        );
+    });
+
+    describe(&apos;Player.isValid&apos;, () =&gt; {
+        parameterized(
+          `given a media wit duration = $duration
+          when i check if the player is valid
+          it should be $valid`,
+          [
+              { duration: 0, valid: false },
+              { duration: NaN, valid: false },
+              { duration: 5, valid: false },
+              { duration: 6, valid: true },
+              { duration: 10000, valid: true }
+          ],
+          params =&gt; {
+              element.duration = params.duration;
+
+              expect(player.isValid()).toBe(params.valid);
+          }
+        );
+    });
+
+});
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href>
+  <title data-ice="title">Source | browser-mpris2</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Implements the MPRIS2 interface for Chrome and Firefox"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="browser-mpris2"><meta property="twitter:description" content="Implements the MPRIS2 interface for Chrome and Firefox"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/Lt-Mayonesa/browser-mpris2"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser">browser</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-carrier">carrier</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-host">host</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-page">page</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-playback">playback</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-background">browser/background</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-raiseTab">raiseTab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeTab">removeTab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-connections">connections</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-host">host</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pages">pages</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-main">browser/main</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/carrier.js~Carrier.html">Carrier</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/host.js~Host.html">Host</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/page.js~Page.html">Page</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/playback.js~Playback.html">Playback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/player.js~Player.html">Player</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LoopStatus">LoopStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MessageMethod">MessageMethod</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MessageProperty">MessageProperty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MessageType">MessageType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PlaybackStatus">PlaybackStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Metadata">Metadata</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Payload">Payload</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-popup">browser/popup</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/popup/version.js~Version.html">Version</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-manifestData">manifestData</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-providers">browser/providers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/netflix.js~NetflixPage.html">NetflixPage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/netflix.js~NetflixPlayback.html">NetflixPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/netflix.js~NetflixPlayer.html">NetflixPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/soundcloud.js~SoundCloudPlayback.html">SoundCloudPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/soundcloud.js~SoundCloudPlayer.html">SoundCloudPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/spotify.js~SpotifyPlayback.html">SpotifyPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/spotify.js~SpotifyPlayer.html">SpotifyPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/tidal.js~TidalPlayback.html">TidalPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/tidal.js~TidalPlayer.html">TidalPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube-music.js~YouTubeMusicPlayback.html">YouTubeMusicPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube-music.js~YouTubeMusicPlayer.html">YouTubeMusicPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube.js~YouTubePage.html">YouTubePage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube.js~YouTubePlayback.html">YouTubePlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube.js~YouTubePlayer.html">YouTubePlayer</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1>Source <img data-ice="coverageBadge" src="./badge.svg"><span data-ice="totalCoverageCount" class="total-coverage-count">140/230</span></h1>
+
+<table class="files-summary" data-ice="files" data-use-coverage="true">
+  <thead>
+    <tr>
+      <td>File</td>
+      <td>Identifier</td>
+      <td class="coverage">Document</td>
+      <td style="display: none;">Size</td>
+      <td style="display: none;">Lines</td>
+      <td style="display: none;">Updated</td>
+    </tr>
+  </thead>
+  <tbody>
+    
+  <tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/browser/background/commands.js.html">src/browser/background/commands.js</a></span></td>
+      <td data-ice="identifier" class="identifiers">-</td>
+      <td class="coverage"><span data-ice="coverage">-</span></td>
+      <td style="display: none;" data-ice="size">162 byte</td>
+      <td style="display: none;" data-ice="lines">5</td>
+      <td style="display: none;" data-ice="updated">2020-02-07 23:04:54 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/browser/background/proxy.js.html#errorLines=1,2,3,39,52">src/browser/background/proxy.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-connections">connections</a></span>
+<span><a href="variable/index.html#static-variable-host">host</a></span>
+<span><a href="variable/index.html#static-variable-pages">pages</a></span>
+<span><a href="function/index.html#static-function-raiseTab">raiseTab</a></span>
+<span><a href="function/index.html#static-function-removeTab">removeTab</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/5</span></td>
+      <td style="display: none;" data-ice="size">1584 byte</td>
+      <td style="display: none;" data-ice="lines">54</td>
+      <td style="display: none;" data-ice="updated">2020-02-07 23:04:54 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/browser/background/updater.js.html">src/browser/background/updater.js</a></span></td>
+      <td data-ice="identifier" class="identifiers">-</td>
+      <td class="coverage"><span data-ice="coverage">-</span></td>
+      <td style="display: none;" data-ice="size">881 byte</td>
+      <td style="display: none;" data-ice="lines">25</td>
+      <td style="display: none;" data-ice="updated">2020-02-07 23:04:54 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/browser/init.js.html">src/browser/init.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-carrier">carrier</a></span>
+<span><a href="variable/index.html#static-variable-host">host</a></span>
+<span><a href="variable/index.html#static-variable-page">page</a></span>
+<span><a href="variable/index.html#static-variable-playback">playback</a></span></td>
+      <td class="coverage"><span data-ice="coverage">100 %</span><span data-ice="coverageCount" class="coverage-count">6/6</span></td>
+      <td style="display: none;" data-ice="size">4120 byte</td>
+      <td style="display: none;" data-ice="lines">110</td>
+      <td style="display: none;" data-ice="updated">2020-02-07 23:04:54 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/browser/main/carrier.js.html">src/browser/main/carrier.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/browser/main/carrier.js~Carrier.html">Carrier</a></span></td>
+      <td class="coverage"><span data-ice="coverage">100 %</span><span data-ice="coverageCount" class="coverage-count">8/8</span></td>
+      <td style="display: none;" data-ice="size">2658 byte</td>
+      <td style="display: none;" data-ice="lines">97</td>
+      <td style="display: none;" data-ice="updated">2020-02-07 23:04:54 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/browser/main/globals.js.html">src/browser/main/globals.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-LoopStatus">LoopStatus</a></span>
+<span><a href="variable/index.html#static-variable-MessageMethod">MessageMethod</a></span>
+<span><a href="variable/index.html#static-variable-MessageProperty">MessageProperty</a></span>
+<span><a href="variable/index.html#static-variable-MessageType">MessageType</a></span>
+<span><a href="variable/index.html#static-variable-PlaybackStatus">PlaybackStatus</a></span></td>
+      <td class="coverage"><span data-ice="coverage">100 %</span><span data-ice="coverageCount" class="coverage-count">5/5</span></td>
+      <td style="display: none;" data-ice="size">3994 byte</td>
+      <td style="display: none;" data-ice="lines">119</td>
+      <td style="display: none;" data-ice="updated">2020-02-07 23:04:54 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/browser/main/host.js.html">src/browser/main/host.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/browser/main/host.js~Host.html">Host</a></span></td>
+      <td class="coverage"><span data-ice="coverage">100 %</span><span data-ice="coverageCount" class="coverage-count">16/16</span></td>
+      <td style="display: none;" data-ice="size">5866 byte</td>
+      <td style="display: none;" data-ice="lines">214</td>
+      <td style="display: none;" data-ice="updated">2020-02-07 23:04:54 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/browser/main/page.js.html">src/browser/main/page.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/browser/main/page.js~Page.html">Page</a></span></td>
+      <td class="coverage"><span data-ice="coverage">100 %</span><span data-ice="coverageCount" class="coverage-count">18/18</span></td>
+      <td style="display: none;" data-ice="size">5188 byte</td>
+      <td style="display: none;" data-ice="lines">194</td>
+      <td style="display: none;" data-ice="updated">2020-02-07 23:04:54 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/browser/main/playback.js.html">src/browser/main/playback.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/browser/main/playback.js~Playback.html">Playback</a></span></td>
+      <td class="coverage"><span data-ice="coverage">100 %</span><span data-ice="coverageCount" class="coverage-count">27/27</span></td>
+      <td style="display: none;" data-ice="size">5280 byte</td>
+      <td style="display: none;" data-ice="lines">224</td>
+      <td style="display: none;" data-ice="updated">2020-02-07 23:04:54 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/browser/main/player.js.html">src/browser/main/player.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/browser/main/player.js~Player.html">Player</a></span></td>
+      <td class="coverage"><span data-ice="coverage">100 %</span><span data-ice="coverageCount" class="coverage-count">35/35</span></td>
+      <td style="display: none;" data-ice="size">7072 byte</td>
+      <td style="display: none;" data-ice="lines">305</td>
+      <td style="display: none;" data-ice="updated">2020-02-07 23:04:54 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/browser/popup/popup.js.html#errorLines=3">src/browser/popup/popup.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="variable/index.html#static-variable-manifestData">manifestData</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/1</span></td>
+      <td style="display: none;" data-ice="size">784 byte</td>
+      <td style="display: none;" data-ice="lines">22</td>
+      <td style="display: none;" data-ice="updated">2020-02-07 23:04:54 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/browser/popup/version.js.html">src/browser/popup/version.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/browser/popup/version.js~Version.html">Version</a></span></td>
+      <td class="coverage"><span data-ice="coverage">100 %</span><span data-ice="coverageCount" class="coverage-count">3/3</span></td>
+      <td style="display: none;" data-ice="size">927 byte</td>
+      <td style="display: none;" data-ice="lines">37</td>
+      <td style="display: none;" data-ice="updated">2020-02-07 23:04:54 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/browser/providers/netflix.js.html#errorLines=17,21,26,31,44,54,58,66,70,74,87">src/browser/providers/netflix.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/browser/providers/netflix.js~NetflixPage.html">NetflixPage</a></span>
+<span><a href="class/src/browser/providers/netflix.js~NetflixPlayback.html">NetflixPlayback</a></span>
+<span><a href="class/src/browser/providers/netflix.js~NetflixPlayer.html">NetflixPlayer</a></span></td>
+      <td class="coverage"><span data-ice="coverage">21 %</span><span data-ice="coverageCount" class="coverage-count">3/14</span></td>
+      <td style="display: none;" data-ice="size">2101 byte</td>
+      <td style="display: none;" data-ice="lines">98</td>
+      <td style="display: none;" data-ice="updated">2020-02-07 23:04:54 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/browser/providers/soundcloud.js.html#errorLines=100,106,116,17,22,29,38,43,57,72,76,80,84,88,93">src/browser/providers/soundcloud.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/browser/providers/soundcloud.js~SoundCloudPlayback.html">SoundCloudPlayback</a></span>
+<span><a href="class/src/browser/providers/soundcloud.js~SoundCloudPlayer.html">SoundCloudPlayer</a></span></td>
+      <td class="coverage"><span data-ice="coverage">11 %</span><span data-ice="coverageCount" class="coverage-count">2/17</span></td>
+      <td style="display: none;" data-ice="size">4899 byte</td>
+      <td style="display: none;" data-ice="lines">160</td>
+      <td style="display: none;" data-ice="updated">2020-02-07 23:04:54 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/browser/providers/spotify.js.html#errorLines=1,13,22,3,31,33,38,43,48,52,56,62,75,8,82">src/browser/providers/spotify.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/browser/providers/spotify.js~SpotifyPlayback.html">SpotifyPlayback</a></span>
+<span><a href="class/src/browser/providers/spotify.js~SpotifyPlayer.html">SpotifyPlayer</a></span></td>
+      <td class="coverage"><span data-ice="coverage">0 %</span><span data-ice="coverageCount" class="coverage-count">0/15</span></td>
+      <td style="display: none;" data-ice="size">3546 byte</td>
+      <td style="display: none;" data-ice="lines">117</td>
+      <td style="display: none;" data-ice="updated">2020-02-07 23:04:54 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/browser/providers/tidal.js.html#errorLines=105,114,12,129,134,143,150,17,22,27,32,41,50,58,59,63,68,72,76,83,90,94">src/browser/providers/tidal.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/browser/providers/tidal.js~TidalPlayback.html">TidalPlayback</a></span>
+<span><a href="class/src/browser/providers/tidal.js~TidalPlayer.html">TidalPlayer</a></span></td>
+      <td class="coverage"><span data-ice="coverage">4 %</span><span data-ice="coverageCount" class="coverage-count">1/23</span></td>
+      <td style="display: none;" data-ice="size">7761 byte</td>
+      <td style="display: none;" data-ice="lines">266</td>
+      <td style="display: none;" data-ice="updated">2020-02-07 23:04:54 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/browser/providers/youtube-music.js.html#errorLines=101,105,109,59,73,84,93,97">src/browser/providers/youtube-music.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/browser/providers/youtube-music.js~YouTubeMusicPlayback.html">YouTubeMusicPlayback</a></span>
+<span><a href="class/src/browser/providers/youtube-music.js~YouTubeMusicPlayer.html">YouTubeMusicPlayer</a></span></td>
+      <td class="coverage"><span data-ice="coverage">50 %</span><span data-ice="coverageCount" class="coverage-count">8/16</span></td>
+      <td style="display: none;" data-ice="size">3914 byte</td>
+      <td style="display: none;" data-ice="lines">143</td>
+      <td style="display: none;" data-ice="updated">2020-02-07 23:04:54 (UTC)</td>
+    </tr>
+<tr data-ice="file">
+      <td data-ice="filePath"><span><a href="file/src/browser/providers/youtube.js.html#errorLines=100,115,120,125,133,147,151,155,160,200,45,50,76">src/browser/providers/youtube.js</a></span></td>
+      <td data-ice="identifier" class="identifiers"><span><a href="class/src/browser/providers/youtube.js~YouTubePage.html">YouTubePage</a></span>
+<span><a href="class/src/browser/providers/youtube.js~YouTubePlayback.html">YouTubePlayback</a></span>
+<span><a href="class/src/browser/providers/youtube.js~YouTubePlayer.html">YouTubePlayer</a></span></td>
+      <td class="coverage"><span data-ice="coverage">38 %</span><span data-ice="coverageCount" class="coverage-count">8/21</span></td>
+      <td style="display: none;" data-ice="size">7952 byte</td>
+      <td style="display: none;" data-ice="lines">260</td>
+      <td style="display: none;" data-ice="updated">2020-02-07 23:04:54 (UTC)</td>
+    </tr>
+</tbody>
+</table>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

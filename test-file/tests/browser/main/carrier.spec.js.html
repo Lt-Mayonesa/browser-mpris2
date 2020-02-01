@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">tests/browser/main/carrier.spec.js | browser-mpris2</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Implements the MPRIS2 interface for Chrome and Firefox"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="browser-mpris2"><meta property="twitter:description" content="Implements the MPRIS2 interface for Chrome and Firefox"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/Lt-Mayonesa/browser-mpris2"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser">browser</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-carrier">carrier</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-host">host</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-page">page</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-playback">playback</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-background">browser/background</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-raiseTab">raiseTab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeTab">removeTab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-connections">connections</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-host">host</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pages">pages</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-main">browser/main</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/carrier.js~Carrier.html">Carrier</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/host.js~Host.html">Host</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/page.js~Page.html">Page</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/playback.js~Playback.html">Playback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/player.js~Player.html">Player</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LoopStatus">LoopStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MessageMethod">MessageMethod</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MessageProperty">MessageProperty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MessageType">MessageType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PlaybackStatus">PlaybackStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Metadata">Metadata</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Payload">Payload</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-popup">browser/popup</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/popup/version.js~Version.html">Version</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-manifestData">manifestData</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-providers">browser/providers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/netflix.js~NetflixPage.html">NetflixPage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/netflix.js~NetflixPlayback.html">NetflixPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/netflix.js~NetflixPlayer.html">NetflixPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/soundcloud.js~SoundCloudPlayback.html">SoundCloudPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/soundcloud.js~SoundCloudPlayer.html">SoundCloudPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/spotify.js~SpotifyPlayback.html">SpotifyPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/spotify.js~SpotifyPlayer.html">SpotifyPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/tidal.js~TidalPlayback.html">TidalPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/tidal.js~TidalPlayer.html">TidalPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube-music.js~YouTubeMusicPlayback.html">YouTubeMusicPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube-music.js~YouTubeMusicPlayer.html">YouTubeMusicPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube.js~YouTubePage.html">YouTubePage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube.js~YouTubePlayback.html">YouTubePlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube.js~YouTubePlayer.html">YouTubePlayer</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">tests/browser/main/carrier.spec.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">describe(&apos;Carrier tests&apos;, () =&gt; {
+
+    /**
+     * @type {Carrier}
+     */
+    let carrier;
+
+    beforeEach(() =&gt; {
+        carrier = new Carrier();
+    });
+
+    describe(&apos;Carrier.store&apos;, () =&gt; {
+        it(
+          `Given a new payload
+          when i store it
+          then it should be the cached value`,
+          () =&gt; {
+              let payload = {
+                  data: 1
+              };
+              // noinspection JSCheckFunctionSignatures
+              carrier.store(payload);
+              expect(carrier.last).toEqual(payload);
+          }
+        );
+    });
+
+    describe(&apos;Carrier.clear&apos;, () =&gt; {
+        it(
+          `Given a stored payload
+          when i clear it
+          then the stored value should be the default`,
+          () =&gt; {
+              carrier.last = {
+                  PlaybackStatus: &apos;Playing&apos;,
+                  Metadata: {}
+              };
+              carrier.clear();
+              expect(carrier.last)
+                .toEqual({});
+          }
+        )
+    });
+
+    describe(&apos;Carrier.onlyUpdated&apos;, () =&gt; {
+        parameterized(
+          `given a stored payload
+          and a new payload
+          when i compare them
+          then i should get only the updated values`,
+          [
+              {
+                  stored: { &apos;PlaybackStatus&apos;: &apos;Playing&apos; },
+                  payload: { &apos;PlaybackStatus&apos;: &apos;Paused&apos; },
+                  expected: { &apos;PlaybackStatus&apos;: &apos;Paused&apos; }
+              },
+              {
+                  stored: { &apos;PlaybackStatus&apos;: &apos;Playing&apos; },
+                  payload: { &apos;PlaybackStatus&apos;: &apos;Playing&apos; },
+                  expected: {}
+              },
+              {
+                  stored: { PlaybackStatus: &apos;Playing&apos;, LoopStatus: &apos;None&apos; },
+                  payload: { PlaybackStatus: &apos;Playing&apos;, LoopStatus: &apos;Track&apos; },
+                  expected: { LoopStatus: &apos;Track&apos; }
+              },
+              {
+                  stored: {
+                      PlaybackStatus: &apos;Playing&apos;,
+                      LoopStatus: &apos;None&apos;,
+                      Metadata: {
+                          &apos;mpris:length&apos;: 10
+                      }
+                  },
+                  payload: {
+                      PlaybackStatus: &apos;Playing&apos;,
+                      LoopStatus: &apos;None&apos;,
+                      Metadata: {
+                          &apos;mpris:length&apos;: 10
+                      }
+                  },
+                  expected: {}
+              },
+              {
+                  stored: {
+                      PlaybackStatus: &apos;Playing&apos;,
+                      LoopStatus: &apos;None&apos;,
+                      Metadata: {
+                          &apos;mpris:length&apos;: 11
+                      }
+                  },
+                  payload: {
+                      PlaybackStatus: &apos;Playing&apos;,
+                      LoopStatus: &apos;None&apos;,
+                      Metadata: {
+                          &apos;mpris:length&apos;: 10
+                      }
+                  },
+                  expected: {
+                      Metadata: {
+                          &apos;mpris:length&apos;: 10
+                      }
+                  }
+              },
+              {
+                  stored: {
+                      Metadata: {
+                          &apos;xesam:artist&apos;: [&apos;artist&apos;]
+                      }
+                  },
+                  payload: {
+                      Metadata: {
+                          &apos;xesam:artist&apos;: [&apos;this&apos;]
+                      }
+                  },
+                  expected: {
+                      Metadata: {
+                          &apos;xesam:artist&apos;: [&apos;this&apos;]
+                      }
+                  }
+              },
+              {
+                  stored: {
+                      PlaybackStatus: &apos;Playing&apos;,
+                      LoopStatus: &apos;None&apos;,
+                      Metadata: {
+                          &apos;mpris:length&apos;: 11,
+                          &apos;mrpis:trackid&apos;: &apos;123&apos;
+                      }
+                  },
+                  payload: {
+                      PlaybackStatus: &apos;Playing&apos;,
+                      LoopStatus: &apos;None&apos;,
+                      Metadata: {
+                          &apos;mpris:length&apos;: 11,
+                          &apos;mrpis:trackid&apos;: &apos;124&apos;
+                      }
+                  },
+                  expected: {
+                      Metadata: {
+                          &apos;mpris:length&apos;: 11,
+                          &apos;mrpis:trackid&apos;: &apos;124&apos;
+                      }
+                  }
+              }
+          ],
+          (params) =&gt; {
+              carrier.last = params.stored;
+              expect(carrier.onlyUpdated(params.payload))
+                .toEqual(params.expected);
+          }
+        );
+    });
+
+    describe(&apos;Carrier.payloadFrom&apos;, () =&gt; {
+        it(
+          `Given a playback
+          with an active player
+          when i build a payload
+          it should be as expected`,
+          () =&gt; {
+              let playback = new Playback();
+              playback.activePlayer = mock(Player,{
+                  isPlaying: () =&gt; true,
+                  isLooping: () =&gt; false,
+                  getVolume: () =&gt; 1,
+                  getId: () =&gt; &apos;id&apos;,
+                  getLength: () =&gt; 10000000,
+                  getCover: () =&gt; &apos;default.jpg&apos;,
+                  getUrl: () =&gt; &apos;http://mock.com&apos;,
+                  getTitle: () =&gt; &apos;my title&apos;,
+                  getArtists: () =&gt; [&apos;artist&apos;],
+                  getSiteDomain: () =&gt; &apos;http://site.com&apos;,
+                  getRate: () =&gt; 1
+              });
+
+              expect(carrier.payloadFrom(playback))
+                .toEqual({
+                    &apos;CanGoNext&apos;: false,
+                    &apos;CanGoPrevious&apos;: false,
+                    &apos;Identity&apos;: &apos;http://site.com&apos;,
+                    &apos;LoopStatus&apos;: &apos;None&apos;,
+                    &apos;Metadata&apos;: {
+                        &apos;mpris:artUrl&apos;: &apos;default.jpg&apos;,
+                        &apos;mpris:length&apos;: 10000000,
+                        &apos;mpris:trackid&apos;: &apos;id&apos;,
+                        &apos;xesam:artist&apos;: [
+                            &apos;artist&apos;
+                        ],
+                        &apos;xesam:title&apos;: &apos;my title&apos;,
+                        &apos;xesam:url&apos;: &apos;http://mock.com&apos;,
+                    },
+                    &apos;PlaybackStatus&apos;: &apos;Playing&apos;,
+                    &apos;Rate&apos;: 1,
+                    &apos;Shuffle&apos;: false,
+                    &apos;Volume&apos;: 1,
+                });
+          }
+        );
+    });
+
+    describe(&apos;Carrier.requestPayload&apos;, () =&gt; {
+        it(
+          `given store it`,
+          () =&gt; {
+              carrier.last = {
+                  &apos;CanGoNext&apos;: false,
+                  &apos;CanGoPrevious&apos;: false,
+                  &apos;Identity&apos;: &apos;http://site.com&apos;,
+                  &apos;LoopStatus&apos;: &apos;None&apos;,
+                  &apos;Metadata&apos;: {
+                      &apos;mpris:artUrl&apos;: &apos;default.jpg&apos;,
+                      &apos;mpris:length&apos;: 10000000,
+                      &apos;mpris:trackid&apos;: &apos;id&apos;,
+                      &apos;xesam:artist&apos;: [
+                          &apos;artist&apos;
+                      ],
+                      &apos;xesam:title&apos;: &apos;my title&apos;,
+                      &apos;xesam:url&apos;: &apos;http://mock.com&apos;,
+                  },
+                  &apos;PlaybackStatus&apos;: &apos;Playing&apos;,
+                  &apos;Rate&apos;: 1,
+                  &apos;Shuffle&apos;: false,
+                  &apos;Volume&apos;: 1,
+              };
+              let playback = new Playback();
+              playback.activePlayer = mock(Player,{
+                  isPlaying: () =&gt; true,
+                  isLooping: () =&gt; false,
+                  getVolume: () =&gt; 1,
+                  getId: () =&gt; &apos;id&apos;,
+                  getLength: () =&gt; 10000000,
+                  getCover: () =&gt; &apos;default.jpg&apos;,
+                  getUrl: () =&gt; &apos;http://mock.com&apos;,
+                  getTitle: () =&gt; &apos;my title&apos;,
+                  getArtists: () =&gt; [&apos;artist&apos;],
+                  getSiteDomain: () =&gt; &apos;http://site.com&apos;,
+                  getRate: () =&gt; 1
+              });
+              expect(carrier.requestPayload(playback))
+                .toEqual({});
+              expect(carrier.last).toEqual({
+                  &apos;CanGoNext&apos;: false,
+                  &apos;CanGoPrevious&apos;: false,
+                  &apos;Identity&apos;: &apos;http://site.com&apos;,
+                  &apos;LoopStatus&apos;: &apos;None&apos;,
+                  &apos;Metadata&apos;: {
+                      &apos;mpris:artUrl&apos;: &apos;default.jpg&apos;,
+                      &apos;mpris:length&apos;: 10000000,
+                      &apos;mpris:trackid&apos;: &apos;id&apos;,
+                      &apos;xesam:artist&apos;: [
+                          &apos;artist&apos;
+                      ],
+                      &apos;xesam:title&apos;: &apos;my title&apos;,
+                      &apos;xesam:url&apos;: &apos;http://mock.com&apos;,
+                  },
+                  &apos;PlaybackStatus&apos;: &apos;Playing&apos;,
+                  &apos;Rate&apos;: 1,
+                  &apos;Shuffle&apos;: false,
+                  &apos;Volume&apos;: 1,
+              });
+          }
+        )
+    });
+
+});
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

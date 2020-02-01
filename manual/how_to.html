@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../">
+  <title data-ice="title">Manual | browser-mpris2</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Implements the MPRIS2 interface for Chrome and Firefox"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="browser-mpris2"><meta property="twitter:description" content="Implements the MPRIS2 interface for Chrome and Firefox"></head>
+<body class="layout-container manual-root" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/Lt-Mayonesa/browser-mpris2"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div class="manual-toc-root">
+  
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/how_to.html"><a href="manual/how_to.html" data-ice="link">How To</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/how_to.html"><a href="manual/how_to.html#0--default-works" data-ice="link">0. Default Works</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/how_to.html"><a href="manual/how_to.html#1--create-a-provider" data-ice="link">1. Create a provider</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/how_to.html"><a href="manual/how_to.html#2--update-manifest-json" data-ice="link">2. Update manifest.json</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/how_to.html"><a href="manual/how_to.html#3--write-your-provider" data-ice="link">3. Write your provider</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/how_to.html"><a href="manual/how_to.html#-a-href--https---lt-mayonesa-github-io-browser-mpris2-class-src-browser-main-player-js-player-html--player--a-" data-ice="link">Player</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/how_to.html"><a href="manual/how_to.html#-a-href--https---lt-mayonesa-github-io-browser-mpris2-class-src-browser-main-playback-js-playback-html--playback--a---singleton-" data-ice="link">Playback (singleton)</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/how_to.html"><a href="manual/how_to.html#-a-href--https---lt-mayonesa-github-io-browser-mpris2-class-src-browser-main-page-js-page-html--page--a---singleton-" data-ice="link">Page (singleton)</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/how_to.html"><a href="manual/how_to.html#4--document-it" data-ice="link">4. Document it</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/how_to.html"><a href="manual/how_to.html#5--pr-it" data-ice="link">5. PR it</a></li>
+</ul>
+  </div>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="how-to">How To</h1><p>If you would like to contribute with a provider please follow this steps.</p>
+<h2 id="0--default-works">0. Default Works</h2><p>Ensure the media elements in the site you are interested in are detected.</p>
+<p><em>if you can&apos;t control the media by default then it probably wont be solved by following this instructions.</em></p>
+<h2 id="1--create-a-provider">1. Create a provider</h2><p>Create a .js file inside src/providers/ with then name (kebab-cased) of the site.</p>
+<h2 id="2--update-manifest-json">2. Update manifest.json</h2><p>Edit the <a href="https://github.com/Lt-Mayonesa/browser-mpris2/blob/master/manifest.json">manifes.json</a>, by adding an item to the <code>&quot;content_scripts&quot;</code> array.</p>
+<ol>
+<li>the item&apos;s <code>&quot;js&quot;</code> property should contain the path to the file you created in the previous step</li>
+<li>the item&apos;s <code>&quot;matches&quot;</code> property should contain a valid match for the site. See <a href="https://developer.chrome.com/extensions/content_scripts">content_scripts</a> for more info.</li>
+<li>ie:<pre><code class="lang-json"><code class="source-code prettyprint">{
+&quot;matches&quot;: [&quot;*://*.youtube.com/*&quot;, &quot;*://youtube.com/*&quot;],
+&quot;js&quot;: [
+ &quot;src/providers/youtube.js&quot;
+],
+&quot;run_at&quot;: &quot;document_start&quot;,
+&quot;all_frames&quot;: true
+}</code>
+</code></pre>
+</li>
+</ol>
+<h2 id="3--write-your-provider">3. Write your provider</h2><p>Edit your provider&apos;s .js file by extending and re-assigning (see snippets below) any of the classes inside <code>src/browser/main/</code> as needed. </p>
+<p>You are most likely to only need to extend any of the following three.</p>
+<h3 id="-a-href--https---lt-mayonesa-github-io-browser-mpris2-class-src-browser-main-player-js-player-html--player--a-"><a href="https://lt-mayonesa.github.io/browser-mpris2/class/src/browser/main/player.js~Player.html">Player</a></h3><p>Besides other things a player defines the metadata (title, artis, coverArt, length) that is sent to the mpris2 interface.
+One page will often hold more than one <code>Player</code>, but only one of them will be the <code>activePlayer</code>.</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">class MySitePlayer extends Player {
+
+   getCover() {
+       return document.getElementById(&apos;element-holding-the-image&apos;).getAttribute(&apos;src&apos;);
+   } 
+
+}
+Player = MySitePlayer;</code>
+</code></pre>
+<h3 id="-a-href--https---lt-mayonesa-github-io-browser-mpris2-class-src-browser-main-playback-js-playback-html--playback--a---singleton-"><a href="https://lt-mayonesa.github.io/browser-mpris2/class/src/browser/main/playback.js~Playback.html">Playback</a> (singleton)</h3><p>This controls the playback of the page. You should override this class in order to better interact with your site.</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">class MySitePlayback extends Playback {
+
+   setLoopStatus (status) {
+       document.getElementById(&apos;button-that-toogles-loop&apos;).click();
+   }
+
+}
+Playback = MySitePlayback;</code>
+</code></pre>
+<h3 id="-a-href--https---lt-mayonesa-github-io-browser-mpris2-class-src-browser-main-page-js-page-html--page--a---singleton-"><a href="https://lt-mayonesa.github.io/browser-mpris2/class/src/browser/main/page.js~Page.html">Page</a> (singleton)</h3><p>A page is in charge of registering and handling media elements.</p>
+<p>It wouldn&apos;t be strange that you don&apos;t have the need to extend this class.</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">   class MySitePage extends Page {
+
+       getTitle() {
+           return document.getElementById(&apos;element-with-title&apos;).textContent;
+       }
+
+   }
+   Page = MySitePage;</code>
+</code></pre>
+<h2 id="4--document-it">4. Document it</h2><p>Add a .md file to the <code>manual/</code> directory containing a summary of what this provider accomplishes. Don&apos;t forget to add it to the <a href="https://github.com/Lt-Mayonesa/browser-mpris2/blob/master/manifest.json">.esdoc.json</a> under the plugins&apos;s <code>name-standard-plugin.option.manual.files</code> property.</p>
+<h2 id="5--pr-it">5. PR it</h2><p>Go ahead and create a pull request. They are always welcome.</p>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

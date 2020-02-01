@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl">
+  <title data-ice="title">Home | browser-mpris2</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Implements the MPRIS2 interface for Chrome and Firefox"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="browser-mpris2"><meta property="twitter:description" content="Implements the MPRIS2 interface for Chrome and Firefox"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/Lt-Mayonesa/browser-mpris2"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser">browser</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-carrier">carrier</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-host">host</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-page">page</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-playback">playback</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-background">browser/background</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-raiseTab">raiseTab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeTab">removeTab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-connections">connections</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-host">host</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pages">pages</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-main">browser/main</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/carrier.js~Carrier.html">Carrier</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/host.js~Host.html">Host</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/page.js~Page.html">Page</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/playback.js~Playback.html">Playback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/player.js~Player.html">Player</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LoopStatus">LoopStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MessageMethod">MessageMethod</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MessageProperty">MessageProperty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MessageType">MessageType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PlaybackStatus">PlaybackStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Metadata">Metadata</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Payload">Payload</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-popup">browser/popup</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/popup/version.js~Version.html">Version</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-manifestData">manifestData</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-providers">browser/providers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/netflix.js~NetflixPage.html">NetflixPage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/netflix.js~NetflixPlayback.html">NetflixPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/netflix.js~NetflixPlayer.html">NetflixPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/soundcloud.js~SoundCloudPlayback.html">SoundCloudPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/soundcloud.js~SoundCloudPlayer.html">SoundCloudPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/spotify.js~SpotifyPlayback.html">SpotifyPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/spotify.js~SpotifyPlayer.html">SpotifyPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/tidal.js~TidalPlayback.html">TidalPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/tidal.js~TidalPlayer.html">TidalPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube-music.js~YouTubeMusicPlayback.html">YouTubeMusicPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube-music.js~YouTubeMusicPlayer.html">YouTubeMusicPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube.js~YouTubePage.html">YouTubePage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube.js~YouTubePlayback.html">YouTubePlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube.js~YouTubePlayer.html">YouTubePlayer</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="browser-mpris2">browser-mpris2</h1><p><a href="https://travis-ci.org/Lt-Mayonesa/browser-mpris2"><img src="https://travis-ci.org/Lt-Mayonesa/browser-mpris2.svg?branch=master" alt="Build Status"></a></p>
+<p>Implements the MPRIS2 interface for Chrome and Firefox.</p>
+<p>Currently, all sites should be supported with reduced capabilities (play, pause, stop, volume, seek, cover art).</p>
+<p>And the following sites are supported with almost all of the capabilities MPRIS2 allows:</p>
+<ul>
+<li><a href="https://lt-mayonesa.github.io/browser-mpris2/manual/youtube.html">YouTube</a></li>
+<li><a href="https://lt-mayonesa.github.io/browser-mpris2/manual/youtube-music.html">YouTube Music</a></li>
+<li><a href="https://lt-mayonesa.github.io/browser-mpris2/manual/soundcloud.html">SoundCloud</a></li>
+<li><a href="https://lt-mayonesa.github.io/browser-mpris2/manual/netflix.html">Netflix</a></li>
+</ul>
+<p>Pull requests are welcome.</p>
+<h3 id="how-it-looks--linux-mint-">How it looks (linux mint)</h3><p><img src="https://raw.githubusercontent.com/Lt-Mayonesa/browser-mpris2/master/screenshot.png" alt="players screenshot"></p>
+<h2 id="installation">Installation</h2><h3 id="install-native-app">Install native app</h3><p>Go to the <a href="https://github.com/Lt-Mayonesa/browser-mpris2/releases/latest">latest release</a> and download the <code>.deb</code> artifact.</p>
+<p>Install the <code>.deb</code> file. ie:</p>
+<pre><code class="lang-bash"><code class="source-code prettyprint">dpkg -i browser-mpris2-v[latest-version]-native.deb</code>
+</code></pre>
+<p>This will make <code>browser-mpris2</code> from the command line available.</p>
+<blockquote>
+<p>If not on Debian, you can grab the browser-mpris2 script from the <code>.zip</code> file. Put it somewhere in your path and then run:</p>
+<p>for chrome or chromium: <code>browser-mpris2 --init-chrome &quot;mcakdldkgmlakhcpdmecedogacbagdba&quot;</code></p>
+<p>for firefox: <code>browser-mpris2 --init-firefox &quot;browser-mpris2@lt-mayonesa.github.io&quot;</code></p>
+</blockquote>
+<h3 id="install-extension-for-chrome">Install extension for Chrome</h3><p>Then, go to <code>Tools &gt; Extensions</code> (or <a href="chrome://extensions">chrome://extensions</a>) and enable <code>Developer mode</code>.</p>
+<p>Download the <code>.crx</code> artifact from the <a href="https://github.com/Lt-Mayonesa/browser-mpris2/releases/latest">latest release</a> and drop it on the Extensions page (if &quot;Drop to install&quot; doesn&apos;t show up try reloading the page).</p>
+<h3 id="install-extension-for-firefox">Install extension for Firefox</h3><p>Download the <code>.xpi</code> artifact from the <a href="https://github.com/Lt-Mayonesa/browser-mpris2/releases/latest">latest release</a> and drop it on Firefox.</p>
+<p><a href="https://www.youtube.com/watch?v=QuoKNZjr8_U">Try it</a> (if the player is not detected try restarting your browser).</p>
+<h2 id="powers">Powers</h2><p>If on Cinnamon, GNOME, or similar you should be able to take advantage of your new powers immediately. Otherwise, you can use something like <a href="https://github.com/acrisci/playerctl">playerctl</a>, perhaps bind it to a key or <code>XF86AudioPlay</code> and the like if your keyboard has them.</p>
+<h3 id="browser-shortcuts">Browser Shortcuts</h3><p>The following commands can be configured as browser shortcuts (ie: in chrome go to <a href="chrome://extensions/shortcuts">chrome://extensions/shortcuts</a>)</p>
+<ul>
+<li>Play</li>
+<li>Pause</li>
+<li>Play/Pause</li>
+<li>Stop</li>
+<li>Next</li>
+<li>Previous</li>
+</ul>
+<h2 id="similar-projects">Similar Projects</h2><ul>
+<li><a href="https://github.com/KDE/plasma-browser-integration">plasma-browser-integration</a></li>
+<li><a href="https://github.com/shwsh/web-mpris2">shwsh/web-mpris2</a> A port of <a href="https://github.com/otommod/browser-mpris2">otommod&apos;s</a> extension to Tampermonkey/Greasemonkey (and WebSockets).</li>
+</ul>
+<h2 id="roadmap">ROADMAP</h2><ul>
+<li>Cinnamon&apos;s &quot;Launch Player&quot; functionality.</li>
+<li>Settings: Global &amp; Per Provider</li>
+<li>Tests per provider</li>
+<li>Providers:<ul>
+<li>Amazon Music</li>
+<li>Google Music</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

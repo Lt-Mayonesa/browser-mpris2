@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/browser/providers/youtube-music.js | browser-mpris2</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Implements the MPRIS2 interface for Chrome and Firefox"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="browser-mpris2"><meta property="twitter:description" content="Implements the MPRIS2 interface for Chrome and Firefox"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/Lt-Mayonesa/browser-mpris2"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser">browser</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-carrier">carrier</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-host">host</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-page">page</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-playback">playback</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-background">browser/background</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-raiseTab">raiseTab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeTab">removeTab</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-connections">connections</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-host">host</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pages">pages</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-main">browser/main</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/carrier.js~Carrier.html">Carrier</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/host.js~Host.html">Host</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/page.js~Page.html">Page</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/playback.js~Playback.html">Playback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/main/player.js~Player.html">Player</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-LoopStatus">LoopStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MessageMethod">MessageMethod</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MessageProperty">MessageProperty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-MessageType">MessageType</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PlaybackStatus">PlaybackStatus</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Metadata">Metadata</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Payload">Payload</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-popup">browser/popup</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/popup/version.js~Version.html">Version</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-manifestData">manifestData</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#browser-providers">browser/providers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/netflix.js~NetflixPage.html">NetflixPage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/netflix.js~NetflixPlayback.html">NetflixPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/netflix.js~NetflixPlayer.html">NetflixPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/soundcloud.js~SoundCloudPlayback.html">SoundCloudPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/soundcloud.js~SoundCloudPlayer.html">SoundCloudPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/spotify.js~SpotifyPlayback.html">SpotifyPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/spotify.js~SpotifyPlayer.html">SpotifyPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/tidal.js~TidalPlayback.html">TidalPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/tidal.js~TidalPlayer.html">TidalPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube-music.js~YouTubeMusicPlayback.html">YouTubeMusicPlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube-music.js~YouTubeMusicPlayer.html">YouTubeMusicPlayer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube.js~YouTubePage.html">YouTubePage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube.js~YouTubePlayback.html">YouTubePlayback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/browser/providers/youtube.js~YouTubePlayer.html">YouTubePlayer</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/browser/providers/youtube-music.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ *
+ * This file adds support for Youtube Music specific playback
+ *
+ * by extending and overriding the classes {@link Page},
+ * {@link Playback}, and {@link Player}.
+ * we can define how we&apos;ll interact with youtube&apos;s site
+ *
+ *
+ */
+
+/**
+ * The metadata sent to the mpris host is defined
+ * by the {@link Player} implementation.
+ */
+class YouTubeMusicPlayer extends Player {
+
+    /**
+     *
+     * @returns {string}
+     */
+    getId () {
+        let url = new URL(location);
+        return url.searchParams.get(&apos;v&apos;);
+    }
+
+    /**
+     * @return {string}
+     */
+    getTitle () {
+        let title = document.querySelector(&apos;.title.ytmusic-player-bar&apos;);
+        return (title &amp;&amp; title.textContent) || super.getTitle();
+    }
+
+    /**
+     * @return {Array&lt;string&gt;}
+     */
+    getArtists () {
+        let artists = document.querySelector(&apos;.byline.ytmusic-player-bar&apos;);
+        return (artists &amp;&amp; artists.textContent.split(&apos; &#x2022; &apos;).slice(0, 1)) || super.getArtists();
+    }
+
+    /**
+     * @returns {string}
+     */
+    getCover () {
+        let img = document.querySelector(&apos;.image.ytmusic-player-bar&apos;);
+        return (img &amp;&amp; img.getAttribute(&apos;src&apos;).replace(/w\d+-h\d+/g, &apos;w544-h544&apos;)) || super.getCover();
+    }
+}
+
+Player = YouTubeMusicPlayer;
+
+/**
+ * YouTube Music Playback
+ */
+class YouTubeMusicPlayback extends Playback {
+
+    setRate (rate) {
+        // stub (rate should not be supported)
+    }
+
+    /**
+     * YouTube Music shuffles the playlist on click
+     *
+     * @param isShuffle
+     */
+    setShuffle (isShuffle) {
+        if (this.controls.shuffleButton)
+            this.controls.shuffleButton.click();
+    }
+
+    setVolume (volume) {
+        super.setVolume(volume);
+        if (volume &gt; 0 &amp;&amp; this.activePlayer.isMuted() &amp;&amp; this.isActionPressed(this.controls.volumeButton)) {
+            this.controls.volumeButton.click();
+        }
+        if (this.controls.volumeKnob) {
+            this.controls.volumeKnob.style.left = `${volume * 100}%`;
+            this.controls.volumeProcess.style.transform = `scaleX(${volume})`;
+        }
+    }
+
+    getLoopStatus () {
+        if (this.controls.loopPlaylistButton) {
+            let label = this.controls.loopPlaylistButton.getAttribute(&apos;aria-label&apos;);
+            return label === &apos;Repeat all&apos; ? LoopStatus.PLAYLIST :
+              label === &apos;Repeat one&apos; ? LoopStatus.TRACK : LoopStatus.NONE;
+        } else
+            return super.getLoopStatus();
+    }
+
+    setLoopStatus (status) {
+        this.controls.loopPlaylistButton &amp;&amp; this.controls.loopPlaylistButton.click();
+    }
+
+    canGoNext () {
+        return !!this.controls.nextButton;
+    }
+
+    canGoPrevious () {
+        return !!this.controls.previousButton;
+    }
+
+    next () {
+        this.controls.nextButton.click();
+    }
+
+    previous () {
+        this.controls.previousButton.click();
+    }
+
+    /**
+     *
+     * @param {HTMLElement} button
+     * @returns {boolean}
+     */
+    isActionPressed (button) {
+        return button.getAttribute(&apos;aria-pressed&apos;) === &apos;true&apos;;
+    }
+}
+
+Playback = YouTubeMusicPlayback;
+
+/*
+    for youtube we need to listen for yt-page-data-updated
+    we subscribe to mpris2-setup to make sure page is defined
+ */
+window.addEventListener(&apos;mpris2-setup&apos;, () =&gt; {
+    page.playback.controls = {
+        nextButton: document.querySelector(&apos;.next-button.ytmusic-player-bar&apos;),
+        previousButton: document.querySelector(&apos;.previous-button.ytmusic-player-bar&apos;),
+        shuffleButton: document.querySelector(&apos;.shuffle.ytmusic-player-bar&apos;),
+        loopPlaylistButton: document.querySelector(&apos;.repeat.ytmusic-player-bar&apos;),
+        volumeKnob: document.getElementById(&apos;sliderKnob&apos;),
+        volumeProcess: document.getElementById(&apos;primaryProgress&apos;),
+        volumeButton: document.querySelector(&apos;.volume.ytmusic-player-bar&apos;)
+    };
+
+    page.observeForChanges(page.playback.controls.loopPlaylistButton, {
+        attributeFilter: [&apos;aria-label&apos;]
+    });
+});
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
