@@ -1,6 +1,6 @@
 {
   "name": "browser-mpris2",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Implements the MPRIS2 interface for Chrome and Firefox",
   "main": "src/browser/init.js",
   "directories": {

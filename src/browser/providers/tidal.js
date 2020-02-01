@@ -77,14 +77,14 @@ class TidalPlayback extends Playback {
         (!this.activePlayer.isPlaying() &&
             this.controls.play &&
             this.controls.play.click()) ||
-            super.play();
+        super.play();
     }
 
     pause() {
         (this.activePlayer.isPlaying() &&
             this.controls.play &&
             this.controls.play.click()) ||
-            super.pause();
+        super.pause();
     }
 
     playPause() {
@@ -154,7 +154,7 @@ class TidalPlayback extends Playback {
 
 Playback = TidalPlayback;
 
-window.addEventListener('mpris2-setup', function() {
+window.addEventListener('mpris2-setup', function () {
     /*
      * Since tidal is loaded dynamically, we need to wait until the playback controls are added
      * to the DOM before we can get the elements.
@@ -167,97 +167,97 @@ window.addEventListener('mpris2-setup', function() {
         mutations.forEach(mutation => {
             mutation.addedNodes.forEach(n => {
                 if (n.className && n.className.startsWith('footerPlayer')) {
-                    initPage()
-                    playerObserver.disconnect()
+                    initPage();
+                    playerObserver.disconnect();
                 }
             });
         });
-    })
+    });
 
-      const initPage = () => {
-            const BUTTONS_CONTAINER = 'div[class*="playbackControls"]';
+    const initPage = () => {
+        const BUTTONS_CONTAINER = 'div[class*="playbackControls"]';
 
-            page.playback.controls = {
-                shuffle: document.querySelector(
-                    BUTTONS_CONTAINER + ' button:nth-child(1)'
-                ),
-                prev: document.querySelector(
-                    BUTTONS_CONTAINER + ' button:nth-child(2)'
-                ),
-                play: document.querySelector(
-                    BUTTONS_CONTAINER + ' button:nth-child(3)'
-                ),
-                next: document.querySelector(
-                    BUTTONS_CONTAINER + ' button:nth-child(4)'
-                ),
-                volumeProgress: document.querySelector(
-                    'div[class*="volumeSlider"] input'
+        page.playback.controls = {
+            shuffle: document.querySelector(
+                BUTTONS_CONTAINER + ' button:nth-child(1)'
+            ),
+            prev: document.querySelector(
+                BUTTONS_CONTAINER + ' button:nth-child(2)'
+            ),
+            play: document.querySelector(
+                BUTTONS_CONTAINER + ' button:nth-child(3)'
+            ),
+            next: document.querySelector(
+                BUTTONS_CONTAINER + ' button:nth-child(4)'
+            ),
+            volumeProgress: document.querySelector(
+                'div[class*="volumeSlider"] input'
+            )
+        };
+
+        // We also reset the repeat button, since this might change
+        const setRepeatElement = () => {
+            page.playback.controls.repeat = document.querySelector(
+                BUTTONS_CONTAINER + ' button:nth-child(5)'
+            );
+            // We might not be playing from a playlist, in this case the repeat button is
+            // replaced with a block button, which we dont want do click.
+            if (
+                page.playback.controls.repeat.className.startsWith(
+                    'blockButton'
                 )
-            };
+            ) {
+                page.playback.controls.repeat = null;
+            }
+        };
 
-            // We also reset the repeat button, since this might change
-            const setRepeatElement = () => {
-                page.playback.controls.repeat = document.querySelector(
-                    BUTTONS_CONTAINER + ' button:nth-child(5)'
-                );
-                // We might not be playing from a playlist, in this case the repeat button is
-                // replaced with a block button, which we dont want do click.
-                if (
-                    page.playback.controls.repeat.className.startsWith(
-                        'blockButton'
-                    )
-                ) {
-                    page.playback.controls.repeat == null;
-                }
+        const setPageElements = () => {
+            page.elements = {
+                title: document.querySelector(
+                    'span[class*="mediaItemTitle"]'
+                ),
+                artist: document.querySelector(
+                    'div[class*="mediaArtists"]'
+                ),
+                cover: document.querySelector(
+                    'figure[class*="mediaImagery"] img'
+                ),
+                duration: document.querySelector('time[class*="duration"]'),
+                currentTime: document.querySelector(
+                    'time[class*="currentTime"]'
+                ),
+                url: document.querySelector('div[class*="playingFrom"] a')
             };
+        };
 
-            const setPageElements = () => {
-                page.elements = {
-                    title: document.querySelector(
-                        'span[class*="mediaItemTitle"]'
-                    ),
-                    artist: document.querySelector(
-                        'div[class*="mediaArtists"]'
-                    ),
-                    cover: document.querySelector(
-                        'figure[class*="mediaImagery"] img'
-                    ),
-                    duration: document.querySelector('time[class*="duration"]'),
-                    currentTime: document.querySelector(
-                        'time[class*="currentTime"]'
-                    ),
-                    url: document.querySelector('div[class*="playingFrom"] a')
-                };
-            };
+        setPageElements();
+        setRepeatElement();
 
+        const observer = new MutationObserver(() => {
             setPageElements();
             setRepeatElement();
+            page.host.change();
+        });
 
-            const observer = new MutationObserver(() => {
-                setPageElements();
-                setRepeatElement();
-                page.host.change();
+        // We observe all relevant elements to see if we need to update.
+        [
+            ...Object.values(page.playback.controls),
+            ...Object.values(page.elements)
+        ].forEach(control => {
+            observer.observe(control, {
+                attributes: true,
+                childList: true,
+                subtree: true
             });
+        });
 
-            // We observe all relevant elements to see if we need to update.
-            [
-                ...Object.values(page.playback.controls),
-                ...Object.values(page.elements)
-            ].forEach(control => {
-                observer.observe(control, {
-                    attributes: true,
-                    childList: true,
-                    subtree: true
-                });
-            });
-
-            page.playback.controls.shuffle.addEventListener('click', () =>
-                page.host.change()
-            );
-            page.playback.controls.repeat.addEventListener('click', () =>
-                page.host.change()
-            );
-        }
+        page.playback.controls.shuffle.addEventListener('click', () =>
+            page.host.change()
+        );
+        page.playback.controls.repeat.addEventListener('click', () =>
+            page.host.change()
+        );
+    };
 
     playerObserver.observe(document, {
         childList: true,
